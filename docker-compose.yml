@@ -1,0 +1,31 @@
+version:  "3.7"
+
+services:
+    database:
+        image: postgres
+        container_name: database_acolhe_mais
+        restart: always
+        ports:
+            - 5432:5432
+        environment: 
+            - POSTGRES_USER=docker
+            - POSTGRES_PASSWORD=acolhe+2021
+            - POSTGRES_DB=acolhe_database
+        volumes: 
+            - pgdata:/data/postgres
+        
+    app:
+        build: .
+        container_name: acolhe_mais
+        ports: 
+            - 5000:5000
+        volumes:
+            - .:/usr/app
+        links: 
+            - database
+        depends_on: 
+            - database        
+
+volumes: 
+    pgdata:
+        driver: local

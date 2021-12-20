@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Acolhe +",
+        "description": "This is an API",
+        "version": "1.0.0",
+        "contact":{
+            "email": "madsonlemos.es@gmail.com"
+        }
+    }
+}
