@@ -22,4 +22,4 @@ interface IPlatformsRepository {
     }: ICreatePlatformDTO): Promise<Platform>;
 }
 
-export { IPlatformsRepository, ICreatePlatformDTO };
+export { IPlatformsRepository };

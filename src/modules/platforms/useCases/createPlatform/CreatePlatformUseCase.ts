@@ -27,7 +27,9 @@ class CreatePlatformUseCase {
         abstract,
         details,
     }: IRequest): Promise<void> {
-        const packAlreadyExists = await this.platformsRepository.findByName(id);
+        const packAlreadyExists = await this.platformsRepository.findByName(
+            name
+        );
 
         if (packAlreadyExists) {
             throw new AppError("Platform Already exists!");

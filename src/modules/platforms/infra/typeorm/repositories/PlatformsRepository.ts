@@ -1,9 +1,7 @@
 import { getRepository, Repository } from "typeorm";
 
-import {
-    IPlatformsRepository,
-    ICreatePlatformDTO,
-} from "@modules/platforms/repositories/IPlatformsRepository";
+import { ICreatePlatformDTO } from "@modules/platforms/dtos/ICreatePlatformDTO";
+import { IPlatformsRepository } from "@modules/platforms/repositories/IPlatformsRepository";
 
 import { Platform } from "../entities/Platform";
 
