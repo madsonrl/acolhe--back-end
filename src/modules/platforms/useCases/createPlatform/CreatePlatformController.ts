@@ -5,16 +5,16 @@ import { CreatePlatformUseCase } from "./CreatePlatformUseCase";
 
 class CreatePlatformController {
     async handle(request: Request, response: Response): Promise<Response> {
-        const { id, name, image, link, abstract, details } = request.body;
+        const { name, link, abstract, details } = request.query;
+        const platform_file = request.file.filename;
 
         const createPlatformUseCase = container.resolve(CreatePlatformUseCase);
         await createPlatformUseCase.execute({
-            id,
-            name,
-            image,
-            link,
-            abstract,
-            details,
+            name: name.toString(),
+            image: platform_file,
+            link: link.toString(),
+            abstract: abstract.toString(),
+            details: details.toString(),
         });
         return response.status(201).send();
     }

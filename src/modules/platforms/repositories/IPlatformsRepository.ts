@@ -3,9 +3,9 @@ import { Platform } from "../infra/typeorm/entities/Platform";
 
 interface IPlatformsRepository {
     findByName(name: string): Promise<Platform>;
+    findById(id: string): Promise<Platform>;
     list(): Promise<Platform[]>;
     create({
-        id,
         name,
         image,
         link,

@@ -4,7 +4,6 @@ import { IPlatformsRepository } from "@modules/platforms/repositories/IPlatforms
 import { AppError } from "@shared/errors/AppError";
 
 interface IRequest {
-    id: string;
     name: string;
     image: string;
     link: string;
@@ -20,7 +19,6 @@ class CreatePlatformUseCase {
     ) {}
 
     async execute({
-        id,
         name,
         image,
         link,
@@ -36,7 +34,6 @@ class CreatePlatformUseCase {
         }
 
         await this.platformsRepository.create({
-            id,
             name,
             image,
             link,

@@ -22,5 +22,9 @@ export class Platform {
         if (!this.id) {
             this.id = uuidV4();
         }
+
+        if (!this.image) {
+            this.image = "default.jpg";
+        }
     }
 }

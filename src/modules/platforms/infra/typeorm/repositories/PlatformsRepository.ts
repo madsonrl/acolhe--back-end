@@ -65,6 +65,11 @@ class PlatformsRepository implements IPlatformsRepository {
         const platform = await this.repository.findOne({ name });
         return platform;
     }
+
+    async findById(id: string): Promise<Platform> {
+        const platform = await this.repository.findOne({ id });
+        return platform;
+    }
 }
 
 export { PlatformsRepository };
