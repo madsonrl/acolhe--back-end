@@ -12,7 +12,7 @@ import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const platformsRoutes = Router();
 
-const uploadImage = multer(uploadConfig.upload("./tmp/images"));
+const uploadImage = multer(uploadConfig.upload("./platformsImages"));
 
 const createPlatformController = new CreatePlatformController();
 const listPlatformsController = new ListPlatformsController();
