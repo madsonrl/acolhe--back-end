@@ -13,7 +13,6 @@ class PlatformsRepository implements IPlatformsRepository {
     }
 
     async create({
-        id,
         name,
         image,
         link,
@@ -21,7 +20,6 @@ class PlatformsRepository implements IPlatformsRepository {
         details,
     }: ICreatePlatformDTO): Promise<void> {
         const platform = this.repository.create({
-            id,
             name,
             image,
             link,

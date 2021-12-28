@@ -1,8 +1,6 @@
+import { ICreatePlatformDTO } from "../../dtos/ICreatePlatformDTO";
 import { Platform } from "../../infra/typeorm/entities/Platform";
-import {
-    ICreatePlatformDTO,
-    IPlatformsRepository,
-} from "../IPlatformsRepository";
+import { IPlatformsRepository } from "../IPlatformsRepository";
 
 class PlatformsRepositoryInMemory implements IPlatformsRepository {
     update({
@@ -29,6 +27,12 @@ class PlatformsRepositoryInMemory implements IPlatformsRepository {
         );
         return platform;
     }
+
+    async findById(id: string): Promise<Platform> {
+        const platform = this.platforms.find((platform) => platform.id === id);
+        return platform;
+    }
+
     async list(): Promise<Platform[]> {
         const all = this.platforms;
 

@@ -1,26 +1,24 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-@Entity("platforms")
-export class Platform {
+@Entity("suggestions")
+export class Suggestion {
     @PrimaryColumn()
     id?: string;
     @Column()
-    name: string;
+    username: string;
     @Column()
-    image: string;
-    @Column()
-    link: string;
-    @Column()
-    abstract: string;
-    @Column()
-    details: string;
+    msg: string;
     @CreateDateColumn()
     created_at: Date;
 
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
+        }
+
+        if (!this.username) {
+            this.username = "Anonymous";
         }
     }
 }

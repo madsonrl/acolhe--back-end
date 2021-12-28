@@ -6,7 +6,12 @@ import { CreatePlatformUseCase } from "./CreatePlatformUseCase";
 class CreatePlatformController {
     async handle(request: Request, response: Response): Promise<Response> {
         const { name, link, abstract, details } = request.query;
-        const platform_file = request.file.filename;
+
+        let platform_file = "defaultImage.jpg";
+
+        if (request.file) {
+            platform_file = request.file.filename;
+        }
 
         const createPlatformUseCase = container.resolve(CreatePlatformUseCase);
         await createPlatformUseCase.execute({

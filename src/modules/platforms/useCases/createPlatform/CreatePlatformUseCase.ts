@@ -4,6 +4,7 @@ import { IPlatformsRepository } from "@modules/platforms/repositories/IPlatforms
 import { AppError } from "@shared/errors/AppError";
 
 interface IRequest {
+    id?: string;
     name: string;
     image: string;
     link: string;
@@ -25,11 +26,11 @@ class CreatePlatformUseCase {
         abstract,
         details,
     }: IRequest): Promise<void> {
-        const packAlreadyExists = await this.platformsRepository.findByName(
+        const platformAlreadyExists = await this.platformsRepository.findByName(
             name
         );
 
-        if (packAlreadyExists) {
+        if (platformAlreadyExists) {
             throw new AppError("Platform Already exists!");
         }
 

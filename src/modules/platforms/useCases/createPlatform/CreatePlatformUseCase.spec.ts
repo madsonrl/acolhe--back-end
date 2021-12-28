@@ -16,7 +16,7 @@ describe("Criar Platform", () => {
 
     it("should be able to  create a new platform", async () => {
         const platform = {
-            id: "idpack",
+            id: "idplatform",
             name: "Platform of the test",
             image: "././teste.jpg",
             link: "www.teste.com",
@@ -32,17 +32,17 @@ describe("Criar Platform", () => {
             abstract: platform.abstract,
             details: platform.details,
         });
-        const packCreated = await platformsRepositoryInMemory.findByName(
+        const platformCreated = await platformsRepositoryInMemory.findByName(
             platform.name
         );
 
-        expect(packCreated).toHaveProperty("id");
+        expect(platformCreated).toHaveProperty("id");
     });
 
     it("should not be able to  create a new platform with id exists", async () => {
         expect(async () => {
             const platform = {
-                id: "idpackdupli",
+                id: "idplatdupli",
                 name: "Platform of the test duplicated",
                 image: "././teste.jpg",
                 link: "www.teste.com",
