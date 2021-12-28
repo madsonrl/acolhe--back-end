@@ -1,5 +1,6 @@
 import { inject, injectable } from "tsyringe";
 
+import { Suggestion } from "@modules/suggestions/infra/typeorm/entities/Suggestion";
 import { ISuggestionsRepository } from "@modules/suggestions/repositories/ISuggestionsRepository";
 
 interface IRequest {
@@ -15,12 +16,14 @@ class CreateSuggestionUseCase {
         private suggestionsRepository: ISuggestionsRepository
     ) {}
 
-    async execute({ id, username, msg }: IRequest): Promise<void> {
-        await this.suggestionsRepository.create({
+    async execute({ id, username, msg }: IRequest): Promise<Suggestion> {
+        const suggestion = await this.suggestionsRepository.create({
             id,
             username,
             msg,
         });
+
+        return suggestion;
     }
 }
 

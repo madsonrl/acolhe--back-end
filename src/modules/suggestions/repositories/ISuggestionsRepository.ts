@@ -4,7 +4,7 @@ import { Suggestion } from "../infra/typeorm/entities/Suggestion";
 interface ISuggestionsRepository {
     findById(id: string): Promise<Suggestion>;
     list(): Promise<Suggestion[]>;
-    create({ username, msg }: ICreateSuggestionDTO): Promise<void>;
+    create({ id, username, msg }: ICreateSuggestionDTO): Promise<Suggestion>;
 }
 
 export { ISuggestionsRepository };

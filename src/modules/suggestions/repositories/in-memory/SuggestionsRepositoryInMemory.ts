@@ -11,7 +11,7 @@ class SuggestionsRepositoryInMemory implements ISuggestionsRepository {
         return all;
     }
 
-    async create({ username, msg }: ICreateSuggestionDTO): Promise<void> {
+    async create({ username, msg }: ICreateSuggestionDTO): Promise<Suggestion> {
         const suggestion = new Suggestion();
 
         Object.assign(suggestion, {
@@ -20,6 +20,8 @@ class SuggestionsRepositoryInMemory implements ISuggestionsRepository {
         });
 
         this.suggestions.push(suggestion);
+
+        return suggestion;
     }
 
     async findById(id: string): Promise<Suggestion> {

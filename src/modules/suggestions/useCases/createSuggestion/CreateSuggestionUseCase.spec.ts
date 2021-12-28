@@ -20,13 +20,14 @@ describe("Criar Sugestão", () => {
             msg: "test",
         };
 
-        await createSuggestionUseCase.execute({
+        const createSuggest = await createSuggestionUseCase.execute({
             id: suggestion.id,
             username: suggestion.username,
             msg: suggestion.msg,
         });
+
         const suggestionCreatead = await suggestionsRepositoryInMemory.findById(
-            suggestion.id
+            createSuggest.id
         );
 
         expect(suggestionCreatead).toHaveProperty("id");

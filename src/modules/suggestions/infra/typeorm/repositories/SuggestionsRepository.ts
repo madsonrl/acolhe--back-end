@@ -12,7 +12,11 @@ class SuggestionsRepository implements ISuggestionsRepository {
         this.repository = getRepository(Suggestion);
     }
 
-    async create({ id, username, msg }: ICreateSuggestionDTO): Promise<void> {
+    async create({
+        id,
+        username,
+        msg,
+    }: ICreateSuggestionDTO): Promise<Suggestion> {
         const suggestion = this.repository.create({
             id,
             username,
@@ -20,6 +24,8 @@ class SuggestionsRepository implements ISuggestionsRepository {
         });
 
         await this.repository.save(suggestion);
+
+        return suggestion;
     }
 
     async list(): Promise<Suggestion[]> {

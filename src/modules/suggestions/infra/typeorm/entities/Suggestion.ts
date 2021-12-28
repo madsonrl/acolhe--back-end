@@ -4,9 +4,9 @@ import { v4 as uuidV4 } from "uuid";
 @Entity("suggestions")
 export class Suggestion {
     @PrimaryColumn()
-    id?: string;
+    id: string;
     @Column()
-    username: string;
+    username?: string;
     @Column()
     msg: string;
     @CreateDateColumn()
