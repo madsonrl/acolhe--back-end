@@ -1,6 +1,10 @@
 # Acolhe+ back-end
 Software web com o objetivo de organizar e facilitar o atendimento assistencial e acolhimento psicológico, no intuito de dar apoio, levar conhecimento e compartilhar ajuda profissional.
 
+CREATED AT: 29-12-2021\
+DEV: Madson Rodrigues Lemos\
+GITHUB: @madsonrl
+
 Dependências:\
 -Docker\
 -Docker Compose\
