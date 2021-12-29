@@ -1,13 +1,13 @@
 # Acolhe+ back-end
 Software web com o objetivo de organizar e facilitar o atendimento assistencial e acolhimento psicológico, no intuito de dar apoio, levar conhecimento e compartilhar ajuda profissional.
 
-Dependências
-Docker
-Docker Compose
-NodeJS + NPM
+Dependências:\
+Docker\
+Docker Compose\
+NodeJS + NPM\
 
-Start Server
-Clone o repositório
+Start Server\
+Clone o repositório\
 
 No diretório raiz executar os comandos de terminal:
 
