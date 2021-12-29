@@ -12,7 +12,7 @@ Start Server\
 No diretório raiz executar os comandos de terminal:
 
     npm install ou yarn
-    dockercompose up
+    docker-compose up
 
 Em segundo terminal execute os camandos:
 
