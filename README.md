@@ -25,7 +25,8 @@ Utilização da API
 
 **ADMIN**
 
-  Login\
+  *Login*\
+
   Route: "/sessions"\
   Method: POST
   ContentType: application/json\
@@ -33,13 +34,14 @@ Utilização da API
 
 **Platforms**
 
-  Create Platform
-  Route: "/platforms"
-  Method: POST
-  ContentType: multipart/formdata
-  Authentication: "bearer_token"
-  file: image
-  Query Params: name, link, abstract, details
+  *Create Platform*\
+
+  Route: "/platforms"\
+  Method: POST\
+  ContentType: multipart/formdata\
+  Authentication: "bearer_token"\
+  file: image\
+  Query Params: name, link, abstract, details\
 
   List Platform
   Route: "/platforms"
