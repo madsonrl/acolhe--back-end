@@ -23,7 +23,7 @@ baseURL: "http://localhost:5000" ou "http://yourexternalip:5000"
 
 Utilização da API
 
-*******ADMIN****
+**ADMIN**
 
   Login
   Route: "/sessions"
@@ -31,7 +31,7 @@ Utilização da API
   ContentType: application/json
   Body: {"username":"username", "password": "password"}
 
-********Platforms*****
+**Platforms**
 
   Create Platform
   Route: "/platforms"
