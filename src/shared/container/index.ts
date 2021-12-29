@@ -7,6 +7,8 @@ import { ISuggestionsRepository } from "@modules/suggestions/repositories/ISugge
 
 import { UsersRepository } from "../../modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepositoy";
+import { ICommentsRepository } from "@modules/comments/repositories/ICommentsRepository";
+import { CommentsRepository } from "@modules/comments/infra/typeorm/repositories/CommentsRepository";
 
 container.registerSingleton<IUsersRepository>(
     "UsersRepository",
@@ -21,4 +23,9 @@ container.registerSingleton<IPlatformsRepository>(
 container.registerSingleton<ISuggestionsRepository>(
     "SuggestionsRepository",
     SuggestionsRepository
+);
+
+container.registerSingleton<ICommentsRepository>(
+    "CommentsRepository",
+    CommentsRepository
 );
