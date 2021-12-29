@@ -58,11 +58,11 @@ Utilização da API
   Method: UPDATE\
   ContentType: application/json\
   Authentication: "bearer_token"\
-  Body: {JSON com campos que deseja atualizar}
+  Body: {JSON com id + campos que deseja atualizar}
 
   *Update Image Platform*
 
-  Route: "/platforms"\
+  Route: "/platforms/image"\
   Method: PATCH\
   ContentType: multipart/formdata\
   Authentication: "bearer_token"\
