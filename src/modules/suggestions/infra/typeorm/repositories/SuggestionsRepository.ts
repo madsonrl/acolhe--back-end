@@ -11,6 +11,7 @@ class SuggestionsRepository implements ISuggestionsRepository {
     constructor() {
         this.repository = getRepository(Suggestion);
     }
+    
 
     async create({
         id,
@@ -36,6 +37,11 @@ class SuggestionsRepository implements ISuggestionsRepository {
     async findById(id: string): Promise<Suggestion> {
         const suggestion = await this.repository.findOne({ id });
         return suggestion;
+    }
+
+    async delete(id: string): Promise<void> {
+        const suggestionToRemove = await this.repository.findOne({id});
+        await this.repository.remove(suggestionToRemove);
     }
 }
 

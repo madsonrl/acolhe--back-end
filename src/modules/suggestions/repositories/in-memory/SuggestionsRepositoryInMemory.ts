@@ -3,6 +3,7 @@ import { Suggestion } from "../../infra/typeorm/entities/Suggestion";
 import { ISuggestionsRepository } from "../ISuggestionsRepository";
 
 class SuggestionsRepositoryInMemory implements ISuggestionsRepository {
+    
     suggestions: Suggestion[] = [];
 
     async list(): Promise<Suggestion[]> {
@@ -30,6 +31,11 @@ class SuggestionsRepositoryInMemory implements ISuggestionsRepository {
         );
         return suggestion;
     }
+
+    delete(id: string): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+
 }
 
 export { SuggestionsRepositoryInMemory };
