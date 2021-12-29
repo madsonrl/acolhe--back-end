@@ -6,7 +6,7 @@ services:
         container_name: database_acolhe_mais
         restart: always
         ports:
-            - 5432:5432
+            - 8500:5432
         environment: 
             - POSTGRES_USER=docker
             - POSTGRES_PASSWORD=acolhe+2021
