@@ -3,13 +3,13 @@ import multer from "multer";
 
 import uploadConfig from "@config/upload";
 import { CreatePlatformController } from "@modules/platforms/useCases/createPlatform/CreatePlatformController";
+import { DeletePlatformController } from "@modules/platforms/useCases/deletePlatform/DeletePlatformController";
 import { ListPlatformsController } from "@modules/platforms/useCases/listPlatforms/ListPlatformsController";
 import { UpdatePlatformController } from "@modules/platforms/useCases/updatePlatform/updatePlatformController";
 import { UpdatePlatformImageController } from "@modules/platforms/useCases/updatePlatFormImage/UpdatePlatformImageController";
 
 import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
-import { DeletePlatformController } from "@modules/platforms/useCases/deletePlatform/DeletePlatformController";
 
 const platformsRoutes = Router();
 
@@ -46,8 +46,11 @@ platformsRoutes.put(
     updatePlatformController.handle
 );
 
-platformsRoutes.delete("/delete", ensureAuthenticated,ensureAdmin, deletePlatformController.handle);
-
-
+platformsRoutes.delete(
+    "/delete",
+    ensureAuthenticated,
+    ensureAdmin,
+    deletePlatformController.handle
+);
 
 export { platformsRoutes };

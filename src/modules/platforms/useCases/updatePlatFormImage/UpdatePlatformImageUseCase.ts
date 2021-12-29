@@ -14,11 +14,12 @@ class UpdatePlatformImageUseCase {
         private platformsRepository: IPlatformsRepository
     ) {}
 
-    async execute({ platform_id, image_file }: IRequest) {
+    async execute({ platform_id, image_file }: IRequest): Promise<void> {
         const platform = await this.platformsRepository.findById(platform_id);
+
         platform.image = image_file;
 
-        await this.platformsRepository.create(platform);
+        await this.platformsRepository.update(platform);
     }
 }
 

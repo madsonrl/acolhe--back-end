@@ -3,7 +3,6 @@ import { Platform } from "../../infra/typeorm/entities/Platform";
 import { IPlatformsRepository } from "../IPlatformsRepository";
 
 class PlatformsRepositoryInMemory implements IPlatformsRepository {
-    
     platforms: Platform[] = [];
 
     async findByName(name: string): Promise<Platform> {

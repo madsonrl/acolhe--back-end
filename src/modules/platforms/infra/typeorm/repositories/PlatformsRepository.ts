@@ -11,7 +11,6 @@ class PlatformsRepository implements IPlatformsRepository {
     constructor() {
         this.repository = getRepository(Platform);
     }
-    
 
     async create({
         name,
@@ -71,7 +70,7 @@ class PlatformsRepository implements IPlatformsRepository {
     }
 
     async delete(id: string): Promise<void> {
-        const platformToRemove = await this.repository.findOne({id});
+        const platformToRemove = await this.repository.findOne({ id });
         await this.repository.remove(platformToRemove);
     }
 }
