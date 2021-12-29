@@ -30,7 +30,7 @@ Utilização da API
   Route: "/sessions"\
   Method: POST
   ContentType: application/json\
-  Body: {"username":"username", "password": "password"}\
+  Body: {"username":"username", "password": "password"}
 
 **Platforms**
 
@@ -41,32 +41,36 @@ Utilização da API
   ContentType: multipart/formdata\
   Authentication: "bearer_token"\
   file: image\
-  Query Params: name, link, abstract, details\
+  Query Params: name, link, abstract, details
 
-  List Platform
-  Route: "/platforms"
+  *List Platform*
+
+  Route: "/platforms"\
   Method: GET
 
-  Update Platform
-  Route: "/platforms/update"
-  Method: UPDATE
-  ContentType: application/json
-  Authentication: "bearer_token"
+  *Update Platform*
+
+  Route: "/platforms/update"\
+  Method: UPDATE\
+  ContentType: application/json\
+  Authentication: "bearer_token"\
   Body: {JSON com campos que deseja atualizar}
 
-  Update Image Platform
-  Route: "/platforms"
-  Method: PATCH
-  ContentType: multipart/formdata
-  Authentication: "bearer_token"
-  file: image
+  *Update Image Platform*
+
+  Route: "/platforms"\
+  Method: PATCH\
+  ContentType: multipart/formdata\
+  Authentication: "bearer_token"\
+  file: image\
   Query Params: platform_id
 
-  Delete Platform
-  Route: "/platforms/update"
-  Method: DELETE
-  ContentType: application/json
-  Authentication: "bearer_token"
+  *Delete Platform*
+
+  Route: "/platforms/update"\
+  Method: DELETE\
+  ContentType: application/json\
+  Authentication: "bearer_token"\
   Body: {"id":"ID Plataforma"}
 
 
