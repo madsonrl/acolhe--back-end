@@ -14,7 +14,7 @@ No diretório raiz executar os comandos de terminal:
     npm install ou yarn
     docker-compose up
 
-Em segundo terminal execute os camandos:
+Em um segundo terminal execute os camandos:
 
     yarn typeorm migration:run ou npm run typeorm migration:run
     yarn seed:admin ou npm run seed:admin
@@ -73,5 +73,47 @@ Utilização da API
   Authentication: "bearer_token"\
   Body: {"id":"ID Plataforma"}
 
+**Comments**
 
-  
+  *Create comentário*
+
+  Route: "/comments"\
+  Method: POST\
+  ContentType: application/json\
+  Body: {"msg":"comentario", "username":"username opcional", "platform_id":"id da plataforma"}
+
+  *List comentario*
+
+  Route: "/comments"\
+  Method: GET
+  query params: pode passar platform_id para filtar
+
+  *Delete comentário*
+
+  Route: "/comments/delete"\
+  Method: DELETE\
+  ContentType: application/json\
+  Authentication: "bearer_token"\
+  Body: {"id":" id comentario"}
+
+**Suggestions**
+
+  *Create sugestão*
+
+  Route: "/suggestions"\
+  Method: POST\
+  ContentType: application/json\
+  Body: {"msg":"comentario", "username":"username opcional"}
+
+  *List sugestões*
+
+  Route: "/suggestions"\
+  Method: GET
+
+  *Delete sugestão*
+
+  Route: "/suggestions/delete"\
+  Method: DELETE\
+  ContentType: application/json\
+  Authentication: "bearer_token"\
+  Body: {"id":" id sugestão"}
