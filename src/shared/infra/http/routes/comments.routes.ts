@@ -3,10 +3,9 @@ import { Router } from "express";
 
 import { CreateCommentController } from "@modules/comments/useCases/createComment/CreateCommentController";
 import { ListCommentsController } from "@modules/comments/useCases/listComments/listCommentsController";
-import { DeleteSuggestionController } from "@modules/suggestions/useCases/deleteSuggestion/deleteSuggestion/DeleteSuggestionController";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 import { ensureAdmin } from "../middlewares/ensureAdmin";
-import { DeleteCommentController } from "@modules/comments/useCases/deleteComment/deleteComment/DeleteCommentController";
+import { DeleteCommentController } from "@modules/comments/useCases/deleteComment/DeleteCommentController";
 
 
 const commentsRoutes = Router();

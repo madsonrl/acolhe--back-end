@@ -20,6 +20,7 @@ interface IPlatformsRepository {
         abstract,
         details,
     }: ICreatePlatformDTO): Promise<Platform>;
+    delete(id: string): Promise<void>;
 }
 
 export { IPlatformsRepository };

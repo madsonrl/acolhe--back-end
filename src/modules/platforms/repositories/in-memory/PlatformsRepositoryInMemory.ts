@@ -3,22 +3,7 @@ import { Platform } from "../../infra/typeorm/entities/Platform";
 import { IPlatformsRepository } from "../IPlatformsRepository";
 
 class PlatformsRepositoryInMemory implements IPlatformsRepository {
-    update({
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        id,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        name,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        image,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        link,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        abstract,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        details,
-    }: ICreatePlatformDTO): Promise<Platform> {
-        throw new Error("Method not implemented.");
-    }
+    
     platforms: Platform[] = [];
 
     async findByName(name: string): Promise<Platform> {
@@ -56,6 +41,26 @@ class PlatformsRepositoryInMemory implements IPlatformsRepository {
         });
 
         this.platforms.push(platform);
+    }
+
+    delete(id: string): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+    update({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        id,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        name,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        image,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        link,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        abstract,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        details,
+    }: ICreatePlatformDTO): Promise<Platform> {
+        throw new Error("Method not implemented.");
     }
 }
 

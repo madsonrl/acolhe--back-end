@@ -9,6 +9,7 @@ import { UpdatePlatformImageController } from "@modules/platforms/useCases/updat
 
 import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
+import { DeletePlatformController } from "@modules/platforms/useCases/deletePlatform/DeletePlatformController";
 
 const platformsRoutes = Router();
 
@@ -18,6 +19,7 @@ const createPlatformController = new CreatePlatformController();
 const listPlatformsController = new ListPlatformsController();
 const updatePlatformController = new UpdatePlatformController();
 const updatePlatformImageController = new UpdatePlatformImageController();
+const deletePlatformController = new DeletePlatformController();
 
 platformsRoutes.post(
     "/",
@@ -43,5 +45,9 @@ platformsRoutes.put(
     ensureAdmin,
     updatePlatformController.handle
 );
+
+platformsRoutes.delete("/delete", ensureAuthenticated,ensureAdmin, deletePlatformController.handle);
+
+
 
 export { platformsRoutes };

@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import { CreateSuggestionController } from "@modules/suggestions/useCases/createSuggestion/CreateSuggestionController";
 import { ListSuggestionsController } from "@modules/suggestions/useCases/listSuggestions/ListSuggestionsController";
-import { DeleteSuggestionController } from "@modules/suggestions/useCases/deleteSuggestion/deleteSuggestion/DeleteSuggestionController";
+import { DeleteSuggestionController } from "@modules/suggestions/useCases/deleteSuggestion/DeleteSuggestionController";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 import { ensureAdmin } from "../middlewares/ensureAdmin";
 
