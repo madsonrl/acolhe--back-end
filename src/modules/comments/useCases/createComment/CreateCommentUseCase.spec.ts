@@ -1,5 +1,4 @@
 import { CommentsRepositoryInMemory } from "@modules/comments/repositories/in-memory/CommentsRepositoryInMemory";
-import { AppError } from "@shared/errors/AppError";
 
 import { CreateCommentUseCase } from "./CreateCommentUseCase";
 
@@ -23,6 +22,4 @@ describe("CreateComment", () => {
 
         expect(comment).toHaveProperty("id");
     });
-
-
 });
