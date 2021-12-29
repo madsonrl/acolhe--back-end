@@ -25,7 +25,7 @@ Utilização da API
 
 **ADMIN**
 
-  *Login*\
+  *Login*
 
   Route: "/sessions"\
   Method: POST
@@ -34,7 +34,7 @@ Utilização da API
 
 **Platforms**
 
-  *Create Platform*\
+  *Create Platform*
 
   Route: "/platforms"\
   Method: POST\
