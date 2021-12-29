@@ -4,6 +4,9 @@ import { Comment } from "@modules/comments/infra/typeorm/entities/Comment";
 import { ICommentsRepository } from "../ICommentsRepository";
 
 class CommentsRepositoryInMemory implements ICommentsRepository {
+    delete(id: string): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
     
     comments: Comment[] = [];
 

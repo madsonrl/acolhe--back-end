@@ -4,12 +4,14 @@ import { ICreateCommentDTO } from "@modules/comments/dtos/ICreateCommentDTO";
 import { ICommentsRepository } from "@modules/comments/repositories/ICommentsRepository";
 
 import { Comment } from "../entities/Comment";
+import { AppError } from "@shared/errors/AppError";
 
 class CommentsRepository implements ICommentsRepository {
     private repository: Repository<Comment>;
     constructor() {
         this.repository = getRepository(Comment);
     }
+    
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async create({
@@ -43,6 +45,17 @@ class CommentsRepository implements ICommentsRepository {
         const comments = await commentsQuery.getMany();
 
         return comments;
+    }
+
+    async delete(id: string): Promise<void> {
+        const commentToRemove = await this.repository.findOne({id});
+        
+        if (!commentToRemove) {
+            throw new AppError("Comment not exists!");
+        }
+
+
+        await this.repository.remove(commentToRemove);
     }
 }
 
