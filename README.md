@@ -25,11 +25,11 @@ Utilização da API
 
 **ADMIN**
 
-  Login
-  Route: "/sessions"
+  Login\
+  Route: "/sessions"\
   Method: POST
-  ContentType: application/json
-  Body: {"username":"username", "password": "password"}
+  ContentType: application/json\
+  Body: {"username":"username", "password": "password"}\
 
 **Platforms**
 
